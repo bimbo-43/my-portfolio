@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-card, .content-card {
+    background: #222;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+}
+
+.profile-card:hover, .content-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-image img {
+    width: 180px;
+    border-radius: 50%;
+    border: 5px solid #FFC107;
+}
+
+h1 {
+    color: #FFC107;
+}
+
+.more-btn {
+    background-color: #FFC107;
+    color: #111;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #FFA000;
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #FFC107;
+    transform: scale(1.1);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-card, .content-card {
+        max-width: 90%;
+    }
+
+    .navigation {
+        position: fixed;
+        right: -100%;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        background: rgba(34, 34, 34, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        transition: right 0.3s ease;
+    }
+
+    .navigation.active {
+        right: 20px;
+    }
+
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+        background: #FFC107;
+        color: #111;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu-toggle.open {
+        background: #FFA000;
+    }
+
+    .nav-btn {
+        font-size: 1.2rem;
+        padding: 10px;
+        margin: 5px 0;
+        width: 50px;
+        text-align: center;
+    }
+}
